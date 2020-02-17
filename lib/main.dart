@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'todo_item.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -43,12 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: Column(
           children: <Widget>[
-            Row(
-              children: <Widget>[
-                Checkbox(value: false, onChanged: (bool value) {},),
-                Text("TODO")
-              ],
-            )
+            TodoItem()
           ],
         ));
   }
