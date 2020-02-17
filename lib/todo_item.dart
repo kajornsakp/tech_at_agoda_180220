@@ -10,18 +10,21 @@ class _TodoItemState extends State<TodoItem> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        Checkbox(
-          value: checked,
-          onChanged: (bool value) {
-            setState(() {
-              checked = value;
-            });
-          },
-        ),
-        Text("TODO")
-      ],
+    return Container(
+      color: Colors.white,
+      child: Row(
+        children: <Widget>[
+          Checkbox(
+            value: checked,
+            onChanged: (bool value) {
+              setState(() {
+                checked = value;
+              });
+            },
+          ),
+          Text("TODO")
+        ],
+      ),
     );
   }
 }
