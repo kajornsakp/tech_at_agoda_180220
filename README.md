@@ -1,16 +1,29 @@
 # flutter_todo
 
-A new Flutter application.
+Sample Todo application used in Tech@Agoda workshop. Just for showing sample functionality of Flutter
 
-## Getting Started
+7 steps
 
-This project is a starting point for a Flutter application.
+0: Sample app from Flutter
+https://github.com/kajornsakp/tech_at_agoda_180220/tree/initial_step
 
-A few resources to get you started if this is your first Flutter project:
+1: Update Appbar and Add Checkbox & Text
+https://github.com/kajornsakp/tech_at_agoda_180220/tree/todo_step1
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+2: Extract Checkbox and Text into TodoItem
+https://github.com/kajornsakp/tech_at_agoda_180220/tree/todo_step2
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+3. Make TodoItem stateful
+https://github.com/kajornsakp/tech_at_agoda_180220/tree/todo_step_3
+
+4. Use ListView to show todos
+https://github.com/kajornsakp/tech_at_agoda_180220/tree/todo_step4
+
+5. Add BottomAppBar for new todo button & completed button
+https://github.com/kajornsakp/tech_at_agoda_180220/tree/todo_step_5
+
+6. Navigate to new page with completed todo
+https://github.com/kajornsakp/tech_at_agoda_180220/tree/todo_step_6
+
+7. Show dialog to add new todo
+https://github.com/kajornsakp/tech_at_agoda_180220/tree/todo_step_7
