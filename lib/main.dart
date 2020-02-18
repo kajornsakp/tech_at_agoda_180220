@@ -27,6 +27,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
   final List<Todo> todos = [
     Todo("Hello", "World"),
     Todo("Hello", "World"),
@@ -34,6 +35,40 @@ class _MyHomePageState extends State<MyHomePage> {
     Todo("Hello", "World"),
     Todo("Hello", "World"),
   ];
+
+  void showCompletedTasks() {
+    var complete = todos.where((item) => item.checked).toList();
+    Navigator.of(context).push(
+        MaterialPageRoute(
+            builder: (BuildContext context) {
+              return Scaffold(
+                appBar: AppBar(
+                  iconTheme: IconThemeData(color: Colors.black),
+                  backgroundColor: Colors.white,
+                  title: Text(
+                    "Completed",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  centerTitle: false,
+                  elevation: 0.0,
+                  automaticallyImplyLeading: true,
+                ),
+                body: ListView.separated(
+                    itemCount: complete.length,
+                    separatorBuilder: (BuildContext context, int index) {
+                      return Divider(height: 1.0);
+                    },
+                    itemBuilder: (BuildContext context, int index) {
+                      return new TodoItem(complete[index]);
+                    }),
+              );
+            }
+        )
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Spacer(),
-            IconButton(icon: Icon(Icons.done), onPressed: () {},)
+            IconButton(icon: Icon(Icons.done), onPressed: showCompletedTasks,)
           ],
         ),
       ),
