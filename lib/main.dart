@@ -27,6 +27,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final List<Todo> todos = [
+    Todo("Hello", "World"),
+    Todo("Hello", "World"),
+    Todo("Hello", "World"),
+    Todo("Hello", "World"),
+    Todo("Hello", "World"),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,10 +51,13 @@ class _MyHomePageState extends State<MyHomePage> {
           centerTitle: false,
           elevation: 0.0,
         ),
-        body: Column(
-          children: <Widget>[
-            TodoItem(Todo("title", "subtitle")),
-          ],
-        ));
+        body: ListView.separated(
+            itemCount: todos.length,
+            separatorBuilder: (BuildContext context, int index) {
+              return Divider(height: 1.0);
+            },
+            itemBuilder: (BuildContext context, int index) {
+              return new TodoItem(todos[index]);
+            }));
   }
 }
