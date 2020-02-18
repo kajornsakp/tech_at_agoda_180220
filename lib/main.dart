@@ -58,6 +58,24 @@ class _MyHomePageState extends State<MyHomePage> {
             },
             itemBuilder: (BuildContext context, int index) {
               return new TodoItem(todos[index]);
-            }));
+            }),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomAppBar(
+        notchMargin: 4.0,
+        shape: CircularNotchedRectangle(),
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Spacer(),
+            IconButton(icon: Icon(Icons.done), onPressed: () {},)
+          ],
+        ),
+      ),
+    );
   }
 }
